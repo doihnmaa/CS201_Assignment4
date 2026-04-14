@@ -18,6 +18,14 @@ print(filtered)
 
 # filtered.to_json("filtered_walk.json", orient="records", indent=4) #береження джсон
 
-plt.figure(figsize=(8, 4))
+plt.figure(figsize=(6, 6))
 plt.plot(df["x"], df["y"], color="purple")
+plt.scatter(df.head(1)["x"], df.head(1)["y"], color="magenta", label="початок")
+plt.scatter(df.tail(1)["x"], df.tail(1)["y"], color="pink", label="кінець")
+plt.title("Random Walk")
+plt.xlabel("X")
+plt.ylabel("Y", rotation = 0) #ротейшн це перевернути У
+plt.axis("equal") # осі однакові
+plt.legend()
+plt.grid(True)
 plt.show()
